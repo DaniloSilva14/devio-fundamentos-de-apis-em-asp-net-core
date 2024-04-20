@@ -12,3 +12,6 @@ dotnet new webapi -n PrimeiraApiCli
 
 -- PARA LIMPAR CACHE DO GIT
 git rm -r --cached .
+
+-- PARA CRIAR UMA MINIMAL API
+dotnet new webapi -n MinimalAPI -minimal
