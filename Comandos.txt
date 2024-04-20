@@ -1,0 +1,14 @@
+--PARA LISTAR TODOS OS TIPOS DE PROJETOS QUE POSSO CRIAR
+dotnet new list
+
+-- PARA CRIAR UMA WEB API
+dotnet new webapi
+
+-- PARA MOSTRAR AS OPCOES DE CRIACAO DE UMA WEB API
+dotnet new webapi -h
+
+-- PARA CRIAR O PROJETO DESSE CURSO
+dotnet new webapi -n PrimeiraApiCli
+
+-- PARA LIMPAR CACHE DO GIT
+git rm -r --cached .
