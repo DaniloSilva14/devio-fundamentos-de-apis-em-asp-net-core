@@ -3,31 +3,43 @@ using Microsoft.AspNetCore.Mvc;
 namespace PrimeiraApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")
+    [Route("api/minha-controller")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        public WeatherForecastController()
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
+            
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet("teste")]
+        public IActionResult Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult Get2()
+        {
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult Get3()
+        {
+            return Ok();
+        }
+
+        //[HttpGet("{id}/dado/{id2}")]
+        //public IActionResult Get4(int id, int id2)
+        //{
+        //    return Ok();
+        //}
+
+        [HttpGet("{id:int}/dado/{id2:int}")]
+        public IActionResult Get5(int id, int id2)
+        {
+            return Ok();
         }
     }
 }
