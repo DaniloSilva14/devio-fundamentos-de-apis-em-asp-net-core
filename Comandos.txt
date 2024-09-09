@@ -15,3 +15,33 @@ git rm -r --cached .
 
 -- PARA CRIAR UMA MINIMAL API
 dotnet new webapi -n MinimalAPI -minimal
+
+-- INSTALAR ENTITY
+(NA JANELA DE PACKAGE MANAGER)
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Design
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+-- PARA INICIAR LOCALDB
+SqlLocalDB.exe start
+
+-- ADICIONAR MIGRATION
+Add-Migration Inicial
+
+-- CONFIRMAR MIGRATION
+Update-Database
+
+-- INSTALAR IDENTITY
+Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+-- MIGRATION IDENTITY
+Add-Migration Identity
+Update-Database
+
+
+-- INSTALAR JWT BEARER
+Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+
+
+
+
